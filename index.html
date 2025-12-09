@@ -3,44 +3,57 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Fortfolio Website</title>
+    <title> Complete Responsive Personal Portfolio Website using HTML CSS & Javacript | Muhammad Shehzad Ali</title>
+    <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- main css -->
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <nav class="navbar">
-        <a href="#" class="logo">Portfolio.</a>
-        <ul>
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Service</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="bars-animation">
-        <div></div>
-        <div class="bar" style="--i:6;"></div>
-        <div class="bar" style="--i:5;"></div>
-        <div class="bar" style="--i:4;"></div>
-        <div class="bar" style="--i:3;"></div>
-        <div class="bar" style="--i:2;"></div>
-        <div class="bar" style="--i:1;"></div>
-    </div>
-    <section class="home">
-        <div class="home-info">
+    <!-- header -->
+    <header>
+        <a href="#" class="logo">SHEHZAD.</a>
+        <!-- menu icon -->
+        <i class='bx bx-menu'></i>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Service</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Resume</a>
+            <a href="#">Contact</a>
+        </nav>
+        </header>
+
+
+
+
+
+         <div class="bars-animation">
+            <div></div>
+            <div class="bar" style="--i:6;"></div>
+            <div class="bar" style="--i:5;"></div>
+            <div class="bar" style="--i:4;"></div>
+            <div class="bar" style="--i:3;"></div>
+            <div class="bar" style="--i:2;"></div>
+            <div class="bar" style="--i:1;"></div>
+        </div>
+
+
+        
+    <section class="home-active">
+        <div class="home-detail">
             <h1>Muhammad Shehzad Ali</h1>
             <h2>Iam a
-                <span style="--i:4;" data-text="Developer">Developer</span>
+                  <span style="--i:4;" data-text="Developer">Developer</span>
                 <span style="--i:3;" data-text="Computer Operater">Computer Operator</span>
-                <span style="--i:2;" data-text="Desinger">Desinger</span>
-                <span style="--i:1;" data-text="Student"> Student</span>
+                <span style="--i:2;" data-text="Desinger">Desinger</span> 
+                <span style="--i:1;" data-text="Coder"> Coder</span>
             </h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi nesciunt neque assumenda dolores
-                incidunt, nihil accusantium voluptates doloremque. Ab, porro? Quibusdam explicabo dolore nemo a pariatur
-                fuga asperiores dolorum officia?</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi nesciunt neque <br> assumenda dolores
+                incidunt, nihil accusantium voluptates doloremque. Ab, porro? </p>
             <div class="btn-sci"><a href="#" class="btn">Download CV</a>
                 <div class="sci">
                     <a href="#"><i class='bx bxl-github'></i></a>
@@ -50,7 +63,7 @@
                 </div>
             </div>
         </div>
-
+ 
         <div class="home-img">
             <div class="img-box">
                 <div class="img-item">
@@ -63,73 +76,72 @@
         </div>
 
 
-        <div></div>
-    </section>
-<!-- Services section -->
-<section class="services-active">
-    <h2 class="heading">My <span>Services</span></h2>
+    </section> 
+    <!-- Services section -->
+     <section class="services-active">
+        <h2 class="heading">My <span>Services</span></h2>
 
-    <div class="services-container">
+        <div class="services-container">
 
-        <div class="services-box">
-            <div class="icon">
-                <i class='bx bx-code-alt'></i>
-                <a href="#"><i class='bx bx-arrow-back'></i></a>
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-code-alt'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Web Development</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
             </div>
-            <h3>Web Development</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bxs-paint'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>UI/UX</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-palette'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Graphic Designer</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-trending-up'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>SEO</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-slideshow'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Video Editor</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-camera'></i>
+                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Photographer</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+            </div>
+
         </div>
 
-        <div class="services-box">
-            <div class="icon">
-                <i class='bx bxs-paint'></i>
-                <a href="#"><i class='bx bx-arrow-back'></i></a>
-            </div>
-            <h3>UI/UX</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-        </div>
+    </section> 
 
-        <div class="services-box">
-            <div class="icon">
-                <i class='bx bx-palette'></i>
-                <a href="#"><i class='bx bx-arrow-back'></i></a>
-            </div>
-            <h3>Graphic Designer</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-        </div>
-
-        <div class="services-box">
-            <div class="icon">
-                <i class='bx bx-trending-up'></i>
-                <a href="#"><i class='bx bx-arrow-back'></i></a>
-            </div>
-            <h3>SEO</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-        </div>
-
-        <div class="services-box">
-            <div class="icon">
-                <i class='bx bx-slideshow'></i>
-                <a href="#"><i class='bx bx-arrow-back'></i></a>
-            </div>
-            <h3>Video Editor</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-        </div>
-
-        <div class="services-box">
-            <div class="icon">
-                <i class='bx bx-camera'></i>
-                <a href="#"><i class='bx bx-arrow-back'></i></a>
-            </div>
-            <h3>Photographer</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-        </div>
-
-    </div>
-
-</section>
-
-<script src="./script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
