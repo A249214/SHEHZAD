@@ -2,34 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Complete Responsive Personal Portfolio Website using HTML CSS & Javacript | Muhammad Shehzad Ali</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complete Responsive Personal Portfolio — Muhammad Shehzad Ali</title>
+
     <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
     <!-- main css -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
     <!-- header -->
     <header>
         <a href="#" class="logo">SHEHZAD.</a>
-        <!-- menu icon -->
-        <i class='bx bx-menu'></i>
-        <nav>
+
+        <!-- menu icon: ADDED id="menu-icon" (was missing) -->
+        <i class="bx bx-menu" id="menu-icon" aria-hidden="true"></i>
+
+        <nav id="main-nav" aria-label="Main Navigation">
             <a href="#" class="active">Home</a>
-            <a href="#">Service</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Resume</a>
-            <a href="#">Contact</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
-
-
-
-
 
     <div class="bars-animation">
         <div></div>
@@ -41,25 +41,30 @@
         <div class="bar" style="--i:1;"></div>
     </div>
 
-
-    <!-- home section -->
-    <section class="home-active">
+    <!-- home section: keep .section-active so CSS transition works -->
+    <section class="home section-active" id="home">
         <div class="home-detail">
             <h1>Muhammad Shehzad Ali</h1>
-            <h2>Iam a
+            <h2>
+                I am a
+                <!-- data-text used by the typing animation -->
                 <span style="--i:4;" data-text="Developer">Developer</span>
-                <span style="--i:3;" data-text="Computer Operater">Computer Operator</span>
-                <span style="--i:2;" data-text="Desinger">Desinger</span>
-                <span style="--i:1;" data-text="Coder"> Coder</span>
+                <span style="--i:3;" data-text="Computer Operator">Computer Operator</span>
+                <span style="--i:2;" data-text="Designer">Designer</span>
+                <span style="--i:1;" data-text="Coder">Coder</span>
             </h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi nesciunt neque <br> assumenda dolores
-                incidunt, nihil accusantium voluptates doloremque. Ab, porro? </p>
-            <div class="btn-sci"><a href="#" class="btn">Download CV</a>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br> Eligendi nesciunt neque
+                assumenda dolores  <br>incidunt, nihil accusantium voluptates doloremque.
+            </p>
+
+            <div class="btn-sci">
+                <a href="#" class="btn">Download CV</a>
                 <div class="sci">
-                    <a href="#"><i class='bx bxl-github'></i></a>
-                    <a href="#"><i class='bx bxl-linkedin'></i></a>
-                    <a href="#"><i class='bx bxl-whatsapp'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin"></i></a>
+                    <a href="#"><i class="bx bxl-whatsapp"></i></a>
+                    <a href="#"><i class="bx bxl-twitter"></i></a>
                 </div>
             </div>
         </div>
@@ -67,26 +72,23 @@
         <div class="home-img">
             <div class="img-box">
                 <div class="img-item">
-
-                    <img src="./WhatsApp Image 2025-12-03 at 10.18.33_9a4625a2.jpg" alt="">
-
+                    <!-- keep your real image filename; ensure path is correct -->
+                    <img src="./WhatsApp Image 2025-12-03 at 10.18.33_9a4625a2.jpg" alt="Shehzad photo" />
                 </div>
-
             </div>
         </div>
-
-
     </section>
+
     <!-- Services section -->
-    <section class="services-active">
+    <!-- gave id for anchor linking -->
+    <section class="services section-active" id="services">
         <h2 class="heading">My <span>Services</span></h2>
 
         <div class="services-container">
-
             <div class="services-box">
                 <div class="icon">
-                    <i class='bx bx-code-alt'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                    <i class="bx bx-code-alt"></i>
+                    <a href="#"><i class="bx bx-arrow-back"></i></a>
                 </div>
                 <h3>Web Development</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
@@ -94,8 +96,8 @@
 
             <div class="services-box">
                 <div class="icon">
-                    <i class='bx bxs-paint'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                    <i class="bx bxs-paint"></i>
+                    <a href="#"><i class="bx bx-arrow-back"></i></a>
                 </div>
                 <h3>UI/UX</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
@@ -103,8 +105,8 @@
 
             <div class="services-box">
                 <div class="icon">
-                    <i class='bx bx-palette'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                    <i class="bx bx-palette"></i>
+                    <a href="#"><i class="bx bx-arrow-back"></i></a>
                 </div>
                 <h3>Graphic Designer</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
@@ -112,8 +114,8 @@
 
             <div class="services-box">
                 <div class="icon">
-                    <i class='bx bx-trending-up'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                    <i class="bx bx-trending-up"></i>
+                    <a href="#"><i class="bx bx-arrow-back"></i></a>
                 </div>
                 <h3>SEO</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
@@ -121,8 +123,8 @@
 
             <div class="services-box">
                 <div class="icon">
-                    <i class='bx bx-slideshow'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                    <i class="bx bx-slideshow"></i>
+                    <a href="#"><i class="bx bx-arrow-back"></i></a>
                 </div>
                 <h3>Video Editor</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
@@ -130,27 +132,26 @@
 
             <div class="services-box">
                 <div class="icon">
-                    <i class='bx bx-camera'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                    <i class="bx bx-camera"></i>
+                    <a href="#"><i class="bx bx-arrow-back"></i></a>
                 </div>
                 <h3>Photographer</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
             </div>
-
         </div>
-
     </section>
 
-    <!-- Resume section  -->
-
-    <section class="resume active">
+    <!-- Resume section -->
+    <section class="resume section-active" id="resume">
         <div class="resume-container">
             <div class="resume-box">
-                <h2>Why Here Me ?</h2>
-                <p class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. At hic provident, dolore, rem
+                <h2>Why Hire Me?</h2>
+                <p class="desc">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. At hic provident, dolore, rem
                     iste exercitationem quasi inventore alias obcaecati dolorum mollitia omnis libero magnam quod
                     similique voluptas facilis accusantium illum.
                 </p>
+
                 <button class="resume-btn active">Experience</button>
                 <button class="resume-btn">Education</button>
                 <button class="resume-btn">Skills</button>
@@ -158,78 +159,61 @@
             </div>
 
             <div class="resume-box">
-
                 <div class="resume-detail experience active">
                     <h2 class="heading">My <span>Experience</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, esse exercitationem
-                        minima a hic adipisci. Itaque autem eveniet qui, quasi expedita animi nulla, eos, dignissimos
-                        omnis amet eius distinctio ut.</p>
+                    <p class="desc">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, esse exercitationem minima a
+                        hic adipisci.
+                    </p>
+
                     <div class="resume-list">
+                        <!-- keep items as you had -->
                         <div class="resume-item">
                             <p class="year">2025 - present</p>
                             <h3>Frontend Developer</h3>
                             <p class="company">abc</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci tenetur illo
-                                accusantium itaque, doloribus, consequuntur error asperiores pariatur reprehenderit
-                                animi facere, delectus fugiat magnam sed eum nemo? Sint, delectus!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
                         </div>
+
                         <div class="resume-item">
                             <p class="year">2025 - present</p>
                             <h3>Full Stack Developer</h3>
                             <p class="company">abc</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci tenetur illo
-                                accusantium itaque, doloribus, consequuntur error asperiores pariatur reprehenderit
-                                animi facere, delectus fugiat magnam sed eum nemo? Sint, delectus!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
                         </div>
+
                         <div class="resume-item">
                             <p class="year">2025 - present</p>
                             <h3>Backend Developer</h3>
                             <p class="company">abc</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci tenetur illo
-                                accusantium itaque, doloribus, consequuntur error asperiores pariatur reprehenderit
-                                animi facere, delectus fugiat magnam sed eum nemo? Sint, delectus!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
                         </div>
-                        <div class="resume-item">
-                            <p class="year">2025 - present</p>
-                            <h3>Frontend Developer</h3>
-                            <p class="company">abc</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci tenetur illo
-                                accusantium itaque, doloribus, consequuntur error asperiores pariatur reprehenderit
-                                animi facere, delectus fugiat magnam sed eum nemo? Sint, delectus!</p>
-                        </div>
+
                         <div class="resume-item">
                             <p class="year">2025 - present</p>
                             <h3>UI/UX Designer</h3>
                             <p class="company">abc</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci tenetur illo
-                                accusantium itaque, doloribus, consequuntur error asperiores pariatur reprehenderit
-                                animi facere, delectus fugiat magnam sed eum nemo? Sint, delectus!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="resume-detail Education">
+                <div class="resume-detail">
                     <h2 class="heading">My <span>Education</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, esse exercitationem
-                        minima a hic adipisci. Itaque autem eveniet qui, quasi expedita animi nulla, eos, dignissimos
-                        omnis amet eius distinctio ut.</p>
+                    <p class="desc">Placeholder education text...</p>
                 </div>
 
-                <div class="resume-detail Skills">
+                <div class="resume-detail">
                     <h2 class="heading">My <span>Skills</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, esse exercitationem
-                        minima a hic adipisci. Itaque autem eveniet qui, quasi expedita animi nulla, eos, dignissimos
-                        omnis amet eius distinctio ut.</p>
+                    <p class="desc">Placeholder skills text...</p>
                 </div>
-                <div class="resume-detail About">
-                    <h2 class="heading">About <span> Me</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, esse exercitationem
-                        minima a hic adipisci. Itaque autem eveniet qui, quasi expedita animi nulla, eos, dignissimos
-                        omnis amet eius distinctio ut.</p>
+
+                <div class="resume-detail">
+                    <h2 class="heading">About <span>Me</span></h2>
+                    <p class="desc">Placeholder about text...</p>
                 </div>
             </div>
         </div>
-
     </section>
 
     <script src="./script.js"></script>
