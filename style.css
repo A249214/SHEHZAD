@@ -437,6 +437,15 @@ h1 {
     height: 40rem;
     overflow: auto;
 }
+.resume-list::-webkit-scrollbar{
+    width: .7rem;
+}
+.resume-list::-webkit-scrollbar-thumb{
+    background: transparent;border-radius: 1rem;
+}
+.resume-list:hover::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+}
 
 .resume-item {
     background: var(--second-bg-color);
@@ -446,12 +455,32 @@ h1 {
     flex-direction: column;
     justify-content: center;
 }
-.resume-item h3{
-    font-size: 2rem;
+
+.resume-item h3 {
+    font-size: 2.2rem;
 }
+
 .resume-item .year {
     color: var(--main-color);
     font-weight: 600;
+}
+
+.resume-item .company {
+    position: relative;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.resume-item .company::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: -5rem;
+    border-radius: 50%;
+    background: var(--main-color);
+    margin-left:-2rem;
+
 }
 
 /* custom scrollbar (simple) */
