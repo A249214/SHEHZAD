@@ -390,18 +390,22 @@ h1 {
 .resume-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 4rem;
+    gap: 5rem;
     align-items: start;
 }
 
 .resume-box h2 {
-    font-size: 3.2rem;
+    font-size: 4.5rem;
     margin-bottom: .8rem;
+}
+
+.resume-box p {
+    font-size: 1.6rem;
 }
 
 .resume-box p.desc {
     font-size: 1.6rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem 0 2.5rem;
 }
 
 .resume-btn {
@@ -413,7 +417,7 @@ h1 {
     color: var(--white-color);
     font-weight: 500;
     border-radius: .8rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 2rem;
     cursor: pointer;
 }
 
@@ -437,20 +441,25 @@ h1 {
     height: 40rem;
     overflow: auto;
 }
-.resume-list::-webkit-scrollbar{
+
+.resume-list::-webkit-scrollbar {
     width: .7rem;
 }
-.resume-list::-webkit-scrollbar-thumb{
-    background: transparent;border-radius: 1rem;
+
+.resume-list::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 1rem;
 }
-.resume-list:hover::-webkit-scrollbar-thumb{
+
+.resume-list:hover::-webkit-scrollbar-thumb {
     background: var(--main-color);
 }
 
 .resume-item {
     background: var(--second-bg-color);
     border-radius: .8rem;
-    padding: 1.8rem;
+    padding: 3rem 2.5rem;
+    height: calc(45rem - 2rem)/ 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -476,12 +485,59 @@ h1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: -5rem;
+    padding: .5rem;
     border-radius: 50%;
     background: var(--main-color);
-    margin-left:-2rem;
+    margin-left: -2rem;
 
 }
+
+/* --------------------SKILL----------------------------------------------------------- */
+.resume-detail.skill .resume-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 14rem;
+}
+
+.resume-detail.skill .resume-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 21rem;
+    width: 25rem;
+    cursor: pointer;
+}
+
+.resume-detail.skill .resume-item i {
+    font-size: 8.5rem;
+    transition: 0.5s;
+}
+
+.resume-detail.skill .resume-item:hover i {
+    color: var(--main-color);
+}
+
+/* Tooltip */
+.resume-detail.skill .resume-item span {
+    position: absolute;
+    top: -2%;
+    background: var(--white-color);
+    color: var(--bg-color);
+    font-size: 1.6rem;
+    padding: 0.1rem 1rem;
+    border-radius: 0.6rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.resume-detail.skill .resume-item:hover span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* custom scrollbar (simple) */
 .resume-list::-webkit-scrollbar {
