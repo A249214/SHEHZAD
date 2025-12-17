@@ -36,3 +36,142 @@ if (resumeBtns.length) {
     });
   });
 }
+
+// const arrowRight = document.querySelector('.arrow-right');
+// const arrowLeft = document.querySelector('.arrow-left');
+// const imgSlide = document.querySelector('.img-slide');
+// const portfolioDetails = document.querySelectorAll('.portfolio-detail');
+
+// let index = 0;
+// const total = portfolioDetails.length - 1;
+
+// function activePortfolio() {
+//   imgSlide.style.transform = `translateX(calc(${index * -100}% - ${index * 2}rem))`;
+
+//   portfolioDetails.forEach(detail => {
+//     detail.classList.remove('active');
+//   });
+
+//   portfolioDetails[index].classList.add('active');
+
+//   arrowLeft.classList.toggle('disabled', index === 0);
+//   arrowRight.classList.toggle('disabled', index === total);
+// }
+
+// arrowRight.addEventListener('click', () => {
+//   if (index < total) {
+//     index++;
+//     activePortfolio();
+//   }
+// });
+
+// arrowLeft.addEventListener('click', () => {
+//   if (index > 0) {
+//     index--;
+//     activePortfolio();
+//   }
+// });
+
+
+
+
+const rightBtn = document.querySelector('.arrow-right');
+const leftBtn = document.querySelector('.arrow-left');
+const slide = document.querySelector('.img-slide');
+const items = document.querySelectorAll('.img-item');
+
+// let index = 0;
+const total = items.length - 1;
+
+function updateSlider() {
+    slide.style.transform = `translateX(-${index * 100}%)`;
+    leftBtn.classList.toggle('disabled', index === 0);
+    rightBtn.classList.toggle('disabled', index === total);
+}
+
+rightBtn.addEventListener('click', () => {
+    if (index < total) {
+        index++;
+        updateSlider();
+    }
+});
+
+leftBtn.addEventListener('click', () => {
+    if (index > 0) {
+        index--;
+        updateSlider();
+    }
+});
+
+
+const arrowRight = document.querySelector('.arrow-right');
+const arrowLeft = document.querySelector('.arrow-left');
+
+const imgSlide = document.querySelector('.portfolio-carousel .img-slid');
+const portfolioDetails = document.querySelectorAll('.portfolio-detail');
+
+let index = 0;
+const totalSlides = document.querySelectorAll('.img-item').length;
+
+function activePortfolio() {
+
+  /* FIX: style (not Style) + correct template string */
+  imgSlide.style.transform = `translateX(calc(${index * -100}% - ${index * 2}rem))`;
+
+  portfolioDetails.forEach(detail => {
+    detail.classList.remove('active');
+  });
+
+  if (portfolioDetails[index]) {
+    portfolioDetails[index].classList.add('active');
+  }
+
+  /* FIX: button enable / disable */
+  arrowLeft.classList.toggle('disabled', index === 0);
+  arrowRight.classList.toggle('disabled', index === totalSlides - 1);
+}
+
+/* FIX: remove space from 'click ' */
+arrowRight.addEventListener('click', () => {
+  if (index < totalSlides - 1) {
+    index++;
+    activePortfolio();
+  }
+});
+
+arrowLeft.addEventListener('click', () => {
+  if (index > 0) {
+    index--;
+    activePortfolio();
+  }
+});
+
+/* INIT */
+activePortfolio();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
