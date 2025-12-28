@@ -85,7 +85,6 @@ section {
     width: 100%;
     min-height: 100vh;
     padding: 10rem 9% 2rem;
-    background: var(--bg-color);
     visibility: hidden;
     opacity: 0;
     overflow: hidden;
@@ -747,23 +746,104 @@ h1 {
     margin-left: 1.5rem;
 }
 
+/* ----------------- Contact Section ----------------- */
 
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+}
 
+.contact-container .contact-box:first-child {
+    align-self: center;
+}
 
+.contact-box h2 {
+    font-size: 4.5rem;
+}
 
+.contact-box p {
+    font-size: 1.6rem;
+}
 
+.contact-box .contact-detail {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+}
 
+.contact-detail i {
+    background: var(--second-bg-color);
+    color: var(--main-color);
+    font-size: 3rem;
+    padding: 1.2rem;
+    border-radius: .6rem;
+    margin-right: 1.5rem;
+}
 
+.contact-detail .detail p:first-child {
+    color: var(--main-color);
+}
 
+/* Form */
+.contact-box form {
+    background: var(--second-bg-color);
+    padding: 2.5rem 3.5rem 3.5rem;
+    border-radius: 1rem;
+    text-align: center;
+}
 
+.contact-box .heading {
+    font-size: 3.5rem;
+}
 
+.contact-box .field-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
 
+.contact-box .field-box input,
+.contact-box .field-box textarea {
+    background: var(--bg-color);
+    border: .15rem solid var(--bg-color);
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--white-color);
+    border-radius: .6rem;
+}
 
+.contact-box .field-box textarea {
+    grid-column: 1 / -1;
+    height: 26rem;
+    resize: none;
+}
 
+.contact-box .field-box input:focus,
+.contact-box .field-box textarea:focus {
+    border-color: var(--main-color);
+}
 
+/* Button */
+.btn-submit {
+    margin-top: 2rem;
+    padding: 1.2rem 3rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    border: .2rem solid var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+}
 
-
-
+.btn-submit:hover {
+    background: transparent;
+    color: var(--main-color);
+}
 
 
 

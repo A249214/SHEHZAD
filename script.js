@@ -1,14 +1,10 @@
-// script.js
-
 /* ---------------- MENU TOGGLE (mobile) ---------------- */
 const menuIcon = document.getElementById('menu-icon');
 const mainNav = document.getElementById('main-nav');
 
 if (menuIcon && mainNav) {
   menuIcon.addEventListener('click', () => {
-    // toggle nav visibility on mobile
     mainNav.classList.toggle('show');
-    // toggle simple aria-expanded for accessibility
     const expanded = mainNav.classList.contains('show');
     menuIcon.setAttribute('aria-expanded', expanded);
   });
@@ -16,7 +12,6 @@ if (menuIcon && mainNav) {
 
 /* ---------------- RESUME TABS ---------------- */
 const resumeBtns = document.querySelectorAll('.resume-btn');
-
 if (resumeBtns.length) {
   resumeBtns.forEach((btn, idx) => {
     btn.addEventListener('click', () => {
@@ -31,147 +26,80 @@ if (resumeBtns.length) {
       // Hide all details
       resumeDetails.forEach(d => d.classList.remove('active'));
 
-      // Show selected detail (guard index)
+      // Show selected detail
       if (resumeDetails[idx]) resumeDetails[idx].classList.add('active');
     });
   });
 }
 
-// const arrowRight = document.querySelector('.arrow-right');
-// const arrowLeft = document.querySelector('.arrow-left');
-// const imgSlide = document.querySelector('.img-slide');
-// const portfolioDetails = document.querySelectorAll('.portfolio-detail');
+/* ---------------- NAV ACTIVE LINKS ---------------- */
+const navLinks = document.querySelectorAll('header nav a');
+const logoLink = document.querySelector('.logo');
 
-// let index = 0;
-// const total = portfolioDetails.length - 1;
-
-// function activePortfolio() {
-//   imgSlide.style.transform = `translateX(calc(${index * -100}% - ${index * 2}rem))`;
-
-//   portfolioDetails.forEach(detail => {
-//     detail.classList.remove('active');
-//   });
-
-//   portfolioDetails[index].classList.add('active');
-
-//   arrowLeft.classList.toggle('disabled', index === 0);
-//   arrowRight.classList.toggle('disabled', index === total);
-// }
-
-// arrowRight.addEventListener('click', () => {
-//   if (index < total) {
-//     index++;
-//     activePortfolio();
-//   }
-// });
-
-// arrowLeft.addEventListener('click', () => {
-//   if (index > 0) {
-//     index--;
-//     activePortfolio();
-//   }
-// });
-
-
-
-
-const rightBtn = document.querySelector('.arrow-right');
-const leftBtn = document.querySelector('.arrow-left');
-const slide = document.querySelector('.img-slide');
-const items = document.querySelectorAll('.img-item');
-
-// let index = 0;
-const total = items.length - 1;
-
-function updateSlider() {
-    slide.style.transform = `translateX(-${index * 100}%)`;
-    leftBtn.classList.toggle('disabled', index === 0);
-    rightBtn.classList.toggle('disabled', index === total);
+function resetActiveNav() {
+  navLinks.forEach(link => link.classList.remove('active'));
 }
 
-rightBtn.addEventListener('click', () => {
-    if (index < total) {
-        index++;
-        updateSlider();
-    }
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    resetActiveNav();
+    link.classList.add('active');
+  });
 });
 
-leftBtn.addEventListener('click', () => {
-    if (index > 0) {
-        index--;
-        updateSlider();
-    }
-});
+if (logoLink) {
+  logoLink.addEventListener('click', () => {
+    resetActiveNav();
+    navLinks[0].classList.add('active'); // Home link
+  });
+}
 
-
+/* ---------------- PORTFOLIO CAROUSEL ---------------- */
 const arrowRight = document.querySelector('.arrow-right');
 const arrowLeft = document.querySelector('.arrow-left');
-
-const imgSlide = document.querySelector('.portfolio-carousel .img-slid');
+const imgSlide = document.querySelector('.portfolio-carousel .img-slide');
+const items = document.querySelectorAll('.img-item');
 const portfolioDetails = document.querySelectorAll('.portfolio-detail');
 
 let index = 0;
-const totalSlides = document.querySelectorAll('.img-item').length;
+const totalSlides = items.length;
 
-function activePortfolio() {
+function updateSlider() {
+  if (!imgSlide) return;
 
-  /* FIX: style (not Style) + correct template string */
-  imgSlide.style.transform = `translateX(calc(${index * -100}% - ${index * 2}rem))`;
+  // Move the slider
+  imgSlide.style.transform = `translateX(-${index * 100}%)`;
 
-  portfolioDetails.forEach(detail => {
-    detail.classList.remove('active');
-  });
+  // Enable/disable arrows
+  arrowLeft.classList.toggle('disabled', index === 0);
+  arrowRight.classList.toggle('disabled', index === totalSlides - 1);
 
+  // Show correct portfolio detail
+  portfolioDetails.forEach(detail => detail.classList.remove('active'));
   if (portfolioDetails[index]) {
     portfolioDetails[index].classList.add('active');
   }
-
-  /* FIX: button enable / disable */
-  arrowLeft.classList.toggle('disabled', index === 0);
-  arrowRight.classList.toggle('disabled', index === totalSlides - 1);
 }
 
-/* FIX: remove space from 'click ' */
-arrowRight.addEventListener('click', () => {
-  if (index < totalSlides - 1) {
-    index++;
-    activePortfolio();
-  }
-});
+// Right arrow click
+if (arrowRight) {
+  arrowRight.addEventListener('click', () => {
+    if (index < totalSlides - 1) {
+      index++;
+      updateSlider();
+    }
+  });
+}
 
-arrowLeft.addEventListener('click', () => {
-  if (index > 0) {
-    index--;
-    activePortfolio();
-  }
-});
+// Left arrow click
+if (arrowLeft) {
+  arrowLeft.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      updateSlider();
+    }
+  });
+}
 
-/* INIT */
-activePortfolio();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Initialize slider
+updateSlider();
